@@ -1,32 +1,3 @@
-
-Skip to content
-
-    Features
-    Business
-    Explore
-    Marketplace
-    Pricing
-
-Sign in or Sign up
-
-1
-0
-
-    0
-
-yannprada/cookie-garden-helper
-Code
-Issues 0
-Pull requests 0
-Projects 0
-Insights
-Join GitHub today
-
-GitHub is home to over 28 million developers working together to host and review code, manage projects, and build software together.
-cookie-garden-helper/cookie-garden-helper.js
-5243aec 7 hours ago
-@yannprada yannprada Auto-harvest rework
-455 lines (412 sloc) 11.7 KB
 {
 
 
@@ -498,19 +469,3 @@ if (Garden.isActive) {
 
 
 }
-
-    © 2018 GitHub, Inc.
-    Terms
-    Privacy
-    Security
-    Status
-    Help
-
-    Contact GitHub
-    API
-    Training
-    Shop
-    Blog
-    About
-
-Press h to open a hovercard with more details.
