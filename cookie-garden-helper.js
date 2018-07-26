@@ -126,9 +126,10 @@ class Garden {
   }
 
   static handleDying(config, plant, x, y) {
-    if (config.autoHarvestDying && config.autoHarvestDyingCheckCpSMult &&
-               this.CpSMult >= config.autoHarvestDyingMiniCpSMult.value) {
-      this.harvest(x, y);
+    if (config.autoHarvestDying) {
+      if(config.autoHarvestDyingCheckCpSMult && this.CpSMult >= config.autoHarvestDyingMiniCpSMult.value) {
+        this.harvest(x, y);
+      }
     }
   }
 
