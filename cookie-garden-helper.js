@@ -337,6 +337,7 @@ class UI {
           config.autoHarvestDying
         )}
       </p>
+      <p>
         ${this.button(
           'autoHarvestDyingCheckCpSMult', 'Check dying CpS mult',
           'Check the CpS multiplier before harvesting dying plants (see below)', true,
