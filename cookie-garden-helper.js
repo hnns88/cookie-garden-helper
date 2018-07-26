@@ -1,3 +1,32 @@
+
+Skip to content
+
+    Features
+    Business
+    Explore
+    Marketplace
+    Pricing
+
+Sign in or Sign up
+
+1
+0
+
+    0
+
+yannprada/cookie-garden-helper
+Code
+Issues 0
+Pull requests 0
+Projects 0
+Insights
+Join GitHub today
+
+GitHub is home to over 28 million developers working together to host and review code, manage projects, and build software together.
+cookie-garden-helper/cookie-garden-helper.js
+5243aec 7 hours ago
+@yannprada yannprada Auto-harvest rework
+455 lines (412 sloc) 11.7 KB
 {
 
 
@@ -22,6 +51,8 @@ class Config {
       autoHarvestCheckCpSMult: false,
       autoHarvestMiniCpSMult: { value: 1, min: 0 },
       autoHarvestDying: true,
+      autoHarvestDyingCheckCpSMult: false,
+      autoHarvestDyingMiniCpSMult: { value: 1, min: 0 },
       autoPlant: false,
       autoPlantCheckCpSMult: false,
       autoPlantMaxiCpSMult: { value: 0, min: 0 },
@@ -124,7 +155,8 @@ class Garden {
   }
 
   static handleDying(config, plant, x, y) {
-    if (config.autoHarvestDying) {
+    if (config.autoHarvestDyingif && config.autoHarvestDyingCheckCpSMult &&
+               this.CpSMult >= config.autoHarvestDyingMiniCpSMult.value) {) {
       this.harvest(x, y);
     }
   }
@@ -334,6 +366,19 @@ class UI {
           config.autoHarvestDying
         )}
       </p>
+        ${this.button(
+          'autoHarvestDyingCheckCpSMult', 'Check dying CpS mult',
+          'Check the CpS multiplier before harvesting dying plants (see below)', true,
+          config.autoHarvestDyingCheckCpSMult
+        )}
+      </p>
+      <p>
+        ${this.numberInput(
+          'autoHarvestDyingMiniCpSMult', 'Dying Mini CpS multiplier',
+          'Minimum CpS multiplier for the auto-harvest of dying plants to happen',
+          config.autoHarvestDyingMiniCpSMult
+        )}
+      </p>
     </div>
     <div class="cookieGardenHelperPanel">
       <h2>
@@ -453,3 +498,19 @@ if (Garden.isActive) {
 
 
 }
+
+    © 2018 GitHub, Inc.
+    Terms
+    Privacy
+    Security
+    Status
+    Help
+
+    Contact GitHub
+    API
+    Training
+    Shop
+    Blog
+    About
+
+Press h to open a hovercard with more details.
